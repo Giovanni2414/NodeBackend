@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/UserRoutes';
 import groupRoutes from './routes/GroupRoutes';
+import * as dotenv from 'dotenv';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,7 +12,11 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb+srv://nodebackend:nike4545@cluster0.vvxg3lr.mongodb.net/?retryWrites=true&w=majority', { dbName: "nodebackend" });
+dotenv.config();
+const mongodbUri = process.env.MONGODB_URI;
+const mongodbUriNew: string = mongodbUri ?? '';
+const mongodb_db = process.env.MONGODB_DB;
+mongoose.connect(mongodbUriNew, { dbName: mongodb_db });
 
 // Rutas
 app.use('/api/users', userRoutes);
