@@ -116,8 +116,8 @@ class GroupController {
     async assignUser(req: Request, res: Response): Promise<void> {
         try {
             authMiddleware(['admin', 'superadmin'])(req, res, async () => {
-                const { groupId, userId } = req.body;
-
+                const { groupId, userId } = req.params;
+                console.log(groupId);
                 // Verificar si el grupo existe
                 const existingGroup = await GroupModel.findById(groupId);
                 if (!existingGroup) {
@@ -140,8 +140,6 @@ class GroupController {
                 const updatedGroup = await existingGroup.save();
 
                 res.json(updatedGroup);
-
-                res.status(204).send();
             });
 
         } catch (error) {

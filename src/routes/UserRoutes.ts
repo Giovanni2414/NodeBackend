@@ -9,6 +9,6 @@ router.get('/:userId', UserController.getUserById);
 router.put('/:userId', UserController.updateUser);
 router.delete('/:userId', UserController.deleteUser);
 router.post('/login', UserController.login);
-router.get('/getGroups/:userId', UserController.getUserGroups)
+router.get('/getGroups/:userId', UserController.getUserGroups);
 
 export default router;
