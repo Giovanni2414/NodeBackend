@@ -9,7 +9,7 @@ Este es un proyecto de backend desarrollado con Node.js, TypeScript y MongoDB. L
 Asegúrate de tener [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) instalados en tu máquina.
 
 # Clona el repositorio
-`git clone https://.git`
+`git clone https://https://github.com/Giovanni2414/NodeBackend.git`
 
 # Navega al directorio del proyecto
 `cd node-backend`
